@@ -59,8 +59,8 @@
 
    |                        | `str` | `list` | `deque` |
    | ---------------------- | ----- | ------ | ------- |
-   | `check_palindrome_1`   |  O(n) |        |         |
-   | `check_palindrome_2`   |       |        |         |
+   | `check_palindrome_1`   |  O(n) |   O(n) |  O(n^2  |
+   | `check_palindrome_2`   |       |  2O(n) |  2O(n) |
 
    **HINT:**
    The runtimes for indexing into a string are the same as those for indexing a list, which is O(1).
@@ -96,8 +96,8 @@
 
    |                        | `xs=("1"*100000)` | `xs=([1]*100000)` | `xs=deque([1]*100000)` |
    | ---------------------- | ---------------- | ---------------- | --------------------- |
-   | `check_palindrome_1`   |                  |                  |                       |
-   | `check_palindrome_2`   |                  |                  |                       |
+   | `check_palindrome_1`   |        6.76 msec |  6.35 msec       |   153 msec            |
+   | `check_palindrome_2`   |        5.15 msec |  4.88 msec       |   4.89 msec           |
 
    You should observe that one of these entries is significantly slower than the others.
    This slow entry should match the asymptotically large entry from the previous problem.
