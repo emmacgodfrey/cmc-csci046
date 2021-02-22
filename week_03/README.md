@@ -60,7 +60,7 @@
    |                        | `str` | `list` | `deque` |
    | ---------------------- | ----- | ------ | ------- |
    | `check_palindrome_1`   |  O(n) |   O(n) |  O(n^2  |
-   | `check_palindrome_2`   |       |  2O(n) |  2O(n) |
+   | `check_palindrome_2`   |  O(n) |  2O(n) |  2O(n) |
 
    **HINT:**
    The runtimes for indexing into a string are the same as those for indexing a list, which is O(1).
