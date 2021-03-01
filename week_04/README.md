@@ -47,7 +47,7 @@ It is a recursive acronym standing for "GNU's Not UNIX".
 ## Lab
 
 The format of this lab is similar to last week's.
-There are two tables for you to fill out ans submit to sakai.
+There are two tables for you to fill out and submit to sakai.
 
 1. First, we will measure just how good the O(log n) runtime for binary search is.
 
@@ -170,27 +170,30 @@ There are two tables for you to fill out ans submit to sakai.
 
    |                            | `array`  | `list`  | `tuple`     | `deque`       |
    | -------------------------- | ---------| --------|------------ | ------------- |
-   | `sequential_search_itr`    | 13.4 msec|0.123 us |2.03 ms      |               |
-   | `sequential_search_rec`    | 0.279 us |         |             |               |
-   | `binary_search_itr`        |          |         |             |               |
-   | `binary_search_rec`        |          |         |             |               |
-   | `binary_search_rec2`       |          |         |             |               |
+   | `sequential_search_itr`    | 13.4 msec|0.123 us |2.03 msec    |2.14 msec      |
+   | `sequential_search_rec`    |  ---     | ---     |  ---        |  ---          |
+   | `binary_search_itr`        |10.2 usec |0.205 us |5.86 usec    |297 usec       |
+   | `binary_search_rec`        |12.1 usec |0.5 us   |7.65 usec    |298 usec       |
+   | `binary_search_rec2`       |10.3 usec |         |8.18 usec    |  ---          |
 
    You should notice that:
    1. for the `array` container, all implementations of binary search work well
    1. for the `list` container, the binary search that relies on slicing is slow
    1. the `tuple` container behaves just like the list container
-   1. binary search does not work at all for the `deque` continer
+   1. binary search provides no speed up for the `deque` container;
+      the `deque` container also does not support slicing, and so the `binary_search_rec2` function will have a type error
+   1. the `sequential_search_rec` gets a `RecursionError` for large `n` values;
+      this is one of the reasons we tend to prefer for loops over recursion when possible
 
    We will prove all of these statements formally next week in class by showing that the runtimes are:
 
    |                            | `array`  | `list`  | `tuple`     | `deque`       |
    | -------------------------- | ---------| --------|------------ | ------------- |
    | `sequential_search_itr`    | O(n)     | O(n)    | O(n)        | O(n)          |
-   | `sequential_search_rec`    | O(n)     | O(n)    | O(n)        | O(n)          |
+   | `sequential_search_rec`    | ---      | ---     | ---         | ---           |
    | `binary_search_itr`        | O(log n) | O(log n)| O(log n)    | O(n)          |
    | `binary_search_rec`        | O(log n) | O(log n)| O(log n)    | O(n)          |
-   | `binary_search_rec2`       | O(log n) | O(n)    | O(n)        | O(n)          |
+   | `binary_search_rec2`       | O(log n) | O(n)    | O(n)        | ---           |
 
 To submit your lab, copy your completed tables with runtimes into sakai.
 There is no need to copy the big-o table.
