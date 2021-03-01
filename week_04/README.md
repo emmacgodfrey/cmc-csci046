@@ -174,7 +174,7 @@ There are two tables for you to fill out and submit to sakai.
    | `sequential_search_rec`    |  ---     | ---     |  ---        |  ---          |
    | `binary_search_itr`        |10.2 usec |0.205 us |5.86 usec    |297 usec       |
    | `binary_search_rec`        |12.1 usec |0.5 us   |7.65 usec    |298 usec       |
-   | `binary_search_rec2`       |10.3 usec |         |8.18 usec    |  ---          |
+   | `binary_search_rec2`       |10.3 usec |680 usec |8.18 usec    |  ---          |
 
    You should notice that:
    1. for the `array` container, all implementations of binary search work well
