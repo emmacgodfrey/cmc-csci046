@@ -64,14 +64,14 @@ There are two tables for you to fill out ans submit to sakai.
 
    |                | `sequential_search_itr`   | `binary_search_itr`   |
    | -------------- | ------------------------- | --------------------- | 
-   | `n=1`          |                           |                       |
-   | `n=10`         |                           |                       |
-   | `n=100`        |                           |                       |
-   | `n=1000`       |                           |                       |
-   | `n=10000`      |                           |                       |
-   | `n=100000`     |                           |                       |
-   | `n=1000000`    |                           |                       |
-   | `n=10000000`   |                           |                       |
+   | `n=1`          |0.134 usec                 | 0.328 usec            |
+   | `n=10`         |0.444 usec                 | 0.797 usec            |
+   | `n=100`        |2.32 usec                  | 1.01 usec             |
+   | `n=1000`       |21.1 usec                  | 1.64 usec             |
+   | `n=10000`      |208 usec                   | 2.27 usec             |
+   | `n=100000`     |2.08 msec                  | 2.48 usec             |
+   | `n=1000000`    |19.8 msec                  | 3.02 usec             |
+   | `n=10000000`   |206 msec                   | 3.72 usec             |
 
    In my experiments:
    1. I get that binary search with `n=10000000` is faster than sequential search with `n=100`.
@@ -170,8 +170,8 @@ There are two tables for you to fill out ans submit to sakai.
 
    |                            | `array`  | `list`  | `tuple`     | `deque`       |
    | -------------------------- | ---------| --------|------------ | ------------- |
-   | `sequential_search_itr`    |          |         |             |               |
-   | `sequential_search_rec`    |          |         |             |               |
+   | `sequential_search_itr`    | 13.4 msec|0.123 us |2.03 ms      |               |
+   | `sequential_search_rec`    | 0.279 us |         |             |               |
    | `binary_search_itr`        |          |         |             |               |
    | `binary_search_rec`        |          |         |             |               |
    | `binary_search_rec2`       |          |         |             |               |
